@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+      <h1>Books</h1>
+      <div class="row">
+        <div *ngFor="let book of books" class="col-lg-4">
+          <app-card [book]="book" (addBook)="insertBook($event)"></app-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <h1>Cart</h1>
+      <ol class="list-group list-group-numbered">
+        <div *ngFor="let item of cartItems">
+          <app-cart-item
+            [item]="item"
+            (removeFromCart)="removeItem($event)"
+            (quantityDecrease)="priceDecrease($event)"
+            (quantityIncrease)="priceIncrease($event)"
+          ></app-cart-item>
+        </div>
+      </ol>
+      <h1>Total: {{ totalPrice }}</h1>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">{{item?.bookInfo?.title}}</div>
+      {{item?.bookInfo?.price?.value}}
+    </div>
+    <div class="me-3 border border-dark bg-light">
+        <button (click)="decreaseQuantity(item?.bookInfo?.ISBN!)">-</button>
+        <span> {{item?.quantity}} </span>
+        <button (click)="increaseQuantity(item?.bookInfo?.ISBN!)">+</button>
+    </div>
+    <button class="badge bg-primary rounded-pill" (click)="removeBook(item?.bookInfo?.ISBN!)">X</button>
+  </li>

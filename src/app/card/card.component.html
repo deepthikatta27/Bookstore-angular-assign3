@@ -1,0 +1,8 @@
+<div class="card" style="width: 15rem; margin:2px;">
+    <img [src]="book?.image" class="card-img-top img-fluid card-img-center" style="width:100%; height:20vh;" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{book?.title | slice:0:30}}</h5>
+      <p class="card-text">{{book?.summary | slice:0:50}}</p>
+      <button (click)="addToCart(book!)" class="btn btn-primary">Rs.{{book?.price?.value}} Add to cart</button>
+    </div>
+  </div>
